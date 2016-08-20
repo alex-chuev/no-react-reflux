@@ -1,0 +1,27 @@
+{
+  "name": "no-react-reflux",
+  "version": "1.0.0",
+  "description": "Simple implementation of the RefluxJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-chuev/no-react-reflux.git"
+  },
+  "author": "Alex Chuev <alex@chuev.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex-chuev/no-react-reflux/issues"
+  },
+  "homepage": "https://github.com/alex-chuev/no-react-reflux#readme",
+  "dependencies": {
+    "events": "^1.1.1",
+    "foreach": "^2.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5"
+  }
+}
