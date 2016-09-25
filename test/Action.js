@@ -7,8 +7,14 @@ const Action = require('../core/Action');
 describe('Action', function () {
     describe('instance', function () {
         var action = new Action([
-            'update'
-        ]);
+                'update',
+                doComplexAction
+            ]),
+            complexActionResults = {};
+
+        function doComplexAction() {
+            this.emit('done', complexActionResults);
+        }
 
         it('should be an instance of the EventEmitter', function () {
             assert(action instanceof EventEmitter);
@@ -16,9 +22,10 @@ describe('Action', function () {
 
         it('should have specified methods', function () {
             assert.equal(typeof action.update, 'function');
+            assert.equal(typeof action.doComplexAction, 'function');
         });
 
-        describe('specified methods', function () {
+        describe('update method', function () {
             it('should emit an event with name of itself and pass arguments as is', function () {
                 var callback = sinon.spy(),
                     argument1 = 'string',
@@ -30,6 +37,17 @@ describe('Action', function () {
 
                 assert(callback.called);
                 assert(callback.calledWith(argument1, argument2, argument3));
+            });
+        });
+
+        describe('doComplexAction method', function () {
+            it('should emit done event with action results', function () {
+                var callback = sinon.spy();
+                action.on('done', callback);
+                action.doComplexAction();
+
+                assert(callback.called);
+                assert(callback.calledWith(complexActionResults));
             });
         });
     });
