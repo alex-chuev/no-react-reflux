@@ -4,7 +4,7 @@
   "description": "Simple implementation of the RefluxJS",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -w"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
