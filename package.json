@@ -1,14 +1,14 @@
 {
   "name": "no-react-reflux",
-  "version": "1.0.0",
   "description": "Simple implementation of the RefluxJS",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alex-chuev/no-react-reflux.git"
+    "url": "https://github.com/alex-chuev/no-react-reflux.git"
   },
   "author": "Alex Chuev <alex@chuev.com>",
   "license": "ISC",
@@ -21,7 +21,14 @@
     "foreach": "^2.0.5"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^1.2.0",
     "mocha": "^3.0.2",
-    "sinon": "^1.17.5"
+    "sinon": "^1.17.5",
+    "semantic-release": "^4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
