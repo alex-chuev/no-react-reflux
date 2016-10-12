@@ -9,7 +9,7 @@ Uses just NodeJS EventEmitter.
     export default new Action([
         'actionName',
         'anotherActionName',
-        complicatedAction
+        ['complicatedAction', complicatedAction]
     ]);
 
     function complicatedAction() {

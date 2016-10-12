@@ -6,9 +6,13 @@ const Action = require('../core/Action');
 
 describe('Action', function () {
     describe('instance', function () {
+        /**
+         * @property {function} update
+         * @property {function} doComplexAction
+         */
         var action = new Action([
                 'update',
-                doComplexAction
+                ['doComplexAction', doComplexAction]
             ]),
             complexActionResults = {};
 
